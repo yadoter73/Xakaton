@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8620844361107938109}
   - component: {fileID: 5669625570112141258}
   - component: {fileID: 2948910268488014096}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: "door\u0438"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5001480242721019157}
   - component: {fileID: 9196243941234138874}
-  m_Layer: 0
+  - component: {fileID: 7171521289064859322}
+  m_Layer: 3
   m_Name: door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,6 +188,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7171521289064859322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948028839049340435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60a7e0bed9cf3b441a014d449c3034a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 0
+  _playerInteraction: {fileID: 0}
 --- !u!1 &6439521652122141973
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +212,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6565688785380127491}
   - component: {fileID: 6414563230202259613}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Audio Source
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -276,7 +291,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
