@@ -88,9 +88,12 @@ namespace KinematicCharacterController.Examples
         private bool _shouldBeCrouching = false;
         private bool _isCrouching = false;
         private bool _isSprinting = false;
+        private StaminaSystem _stamina;
 
         private Vector3 lastInnerNormal = Vector3.zero;
         private Vector3 lastOuterNormal = Vector3.zero;
+
+        public bool IsSprintingActual { get; private set; }
 
         private void Awake()
         {
@@ -99,6 +102,7 @@ namespace KinematicCharacterController.Examples
 
             // Assign the characterController to the motor
             Motor.CharacterController = this;
+            _stamina = GetComponent<StaminaSystem>();
         }
 
         /// <summary>
@@ -145,7 +149,10 @@ namespace KinematicCharacterController.Examples
         /// </summary>
         public void SetInputs(ref PlayerCharacterInputs inputs)
         {
-            // Clamp input
+            var stamina = GetComponent<StaminaSystem>();
+
+            IsSprintingActual = inputs.SprintHeld && _moveInputVector.sqrMagnitude > 0f && (stamina == null || !stamina.isExhausted);
+
             Vector3 moveInputVector = Vector3.ClampMagnitude(new Vector3(inputs.MoveAxisRight, 0f, inputs.MoveAxisForward), 1f);
 
             // Calculate camera direction and rotation on the character plane
@@ -162,7 +169,12 @@ namespace KinematicCharacterController.Examples
                     {
                         // Move and look inputs
                         _moveInputVector = cameraPlanarRotation * moveInputVector;
-                        _isSprinting = inputs.SprintHeld && !_isCrouching;
+                        bool canSprint = (_stamina == null || !_stamina.isExhausted);
+                        bool isMoving = _moveInputVector.sqrMagnitude > 0f;
+
+                        _isSprinting = inputs.SprintHeld && !_isCrouching && canSprint && isMoving;
+
+                        IsSprintingActual = _isSprinting;
 
                         switch (OrientationMethod)
                         {
@@ -288,55 +300,44 @@ namespace KinematicCharacterController.Examples
             {
                 case CharacterState.Default:
                     {
-                        // Ground movement
                         if (Motor.GroundingStatus.IsStableOnGround)
                         {
                             float currentVelocityMagnitude = currentVelocity.magnitude;
-
                             Vector3 effectiveGroundNormal = Motor.GroundingStatus.GroundNormal;
 
-                            // Reorient velocity on slope
                             currentVelocity = Motor.GetDirectionTangentToSurface(currentVelocity, effectiveGroundNormal) * currentVelocityMagnitude;
 
-                            // Calculate target velocity
                             float targetSpeed = _isSprinting ? MaxSprintSpeed : MaxStableMoveSpeed;
 
-                            if (_isCrouching) targetSpeed = MaxStableMoveSpeed * 0.5f;
+                            if (_isCrouching)
+                                targetSpeed = MaxStableMoveSpeed * 0.5f;
 
                             Vector3 inputRight = Vector3.Cross(_moveInputVector, Motor.CharacterUp);
                             Vector3 reorientedInput = Vector3.Cross(effectiveGroundNormal, inputRight).normalized * _moveInputVector.magnitude;
-
                             Vector3 targetMovementVelocity = reorientedInput * targetSpeed;
 
                             currentVelocity = Vector3.Lerp(currentVelocity, targetMovementVelocity, 1f - Mathf.Exp(-StableMovementSharpness * deltaTime));
                         }
-                        // Air movement
                         else
                         {
-                            // Add move input
                             if (_moveInputVector.sqrMagnitude > 0f)
                             {
                                 Vector3 addedVelocity = _moveInputVector * AirAccelerationSpeed * deltaTime;
-
                                 Vector3 currentVelocityOnInputsPlane = Vector3.ProjectOnPlane(currentVelocity, Motor.CharacterUp);
 
-                                // Limit air velocity from inputs
                                 if (currentVelocityOnInputsPlane.magnitude < MaxAirMoveSpeed)
                                 {
-                                    // clamp addedVel to make total vel not exceed max vel on inputs plane
                                     Vector3 newTotal = Vector3.ClampMagnitude(currentVelocityOnInputsPlane + addedVelocity, MaxAirMoveSpeed);
                                     addedVelocity = newTotal - currentVelocityOnInputsPlane;
                                 }
                                 else
                                 {
-                                    // Make sure added vel doesn't go in the direction of the already-exceeding velocity
                                     if (Vector3.Dot(currentVelocityOnInputsPlane, addedVelocity) > 0f)
                                     {
                                         addedVelocity = Vector3.ProjectOnPlane(addedVelocity, currentVelocityOnInputsPlane.normalized);
                                     }
                                 }
 
-                                // Prevent air-climbing sloped walls
                                 if (Motor.GroundingStatus.FoundAnyGround)
                                 {
                                     if (Vector3.Dot(currentVelocity + addedVelocity, addedVelocity) > 0f)
@@ -346,46 +347,41 @@ namespace KinematicCharacterController.Examples
                                     }
                                 }
 
-                                // Apply added velocity
                                 currentVelocity += addedVelocity;
                             }
 
-                            // Gravity
                             currentVelocity += Gravity * deltaTime;
 
-                            // Drag
                             currentVelocity *= (1f / (1f + (Drag * deltaTime)));
                         }
 
-                        // Handle jumping
                         _jumpedThisFrame = false;
                         _timeSinceJumpRequested += deltaTime;
+
                         if (_jumpRequested)
                         {
-                            // See if we actually are allowed to jump
-                            if (!_jumpConsumed && ((AllowJumpingWhenSliding ? Motor.GroundingStatus.FoundAnyGround : Motor.GroundingStatus.IsStableOnGround) || _timeSinceLastAbleToJump <= JumpPostGroundingGraceTime))
+                            bool canJump = (AllowJumpingWhenSliding ? Motor.GroundingStatus.FoundAnyGround : Motor.GroundingStatus.IsStableOnGround)
+                                           || _timeSinceLastAbleToJump <= JumpPostGroundingGraceTime;
+
+                            if (!_jumpConsumed && canJump)
                             {
-                                // Calculate jump direction before ungrounding
                                 Vector3 jumpDirection = Motor.CharacterUp;
                                 if (Motor.GroundingStatus.FoundAnyGround && !Motor.GroundingStatus.IsStableOnGround)
                                 {
                                     jumpDirection = Motor.GroundingStatus.GroundNormal;
                                 }
 
-                                // Makes the character skip ground probing/snapping on its next update. 
-                                // If this line weren't here, the character would remain snapped to the ground when trying to jump. Try commenting this line out and see.
                                 Motor.ForceUnground();
 
-                                // Add to the return velocity and reset jump state
                                 currentVelocity += (jumpDirection * JumpUpSpeed) - Vector3.Project(currentVelocity, Motor.CharacterUp);
                                 currentVelocity += (_moveInputVector * JumpScalableForwardSpeed);
+
                                 _jumpRequested = false;
                                 _jumpConsumed = true;
                                 _jumpedThisFrame = true;
                             }
                         }
 
-                        // Take into account additive velocity
                         if (_internalVelocityAdd.sqrMagnitude > 0f)
                         {
                             currentVelocity += _internalVelocityAdd;
