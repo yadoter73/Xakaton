@@ -24,14 +24,9 @@ public class DoorBehaviour : MonoBehaviour , IInteractable
         _animator.SetBool("IsOpen", true);
         UniTask.WaitForSeconds(5).ContinueWith(() => _animator.SetBool("IsOpen", false)).Forget();
     }
-    public string GetState()
-    {
-        return _locked ? "<color=red>Door's locked</color>" :
-                         "<color=green>Door's opened</color>";
-    }
 
     public string GetDescription()
     {
-        return "Press E to open the door";
+        return "E to knock down the door";
     }
 }
