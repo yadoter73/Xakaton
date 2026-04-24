@@ -1,34 +1,31 @@
 using UnityEngine;
 
 
-public class WARNING : MonoBehaviour
+public class Warning : MonoBehaviour
 {
-    [SerializeField] private GameObject uiPanel; 
+    [SerializeField] private GameObject uiPanel;
 
     void Start()
     {
         if (uiPanel != null)
         {
-            uiPanel.SetActive(false); 
+            uiPanel.SetActive(false);
         }
     }
 
-    private void OnTriggerEnter(Collider other) 
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (uiPanel != null)
-                uiPanel.SetActive(true); 
+            uiPanel.SetActive(true);
         }
     }
 
-    private void OnTriggerExit(Collider other) 
+    private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
-        { 
-            if (uiPanel != null)
-                uiPanel.SetActive(false);
+        {
+            uiPanel.SetActive(false);
         }
     }
 }
-    
