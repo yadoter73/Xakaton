@@ -1,15 +1,18 @@
+using TMPro; 
 using UnityEngine;
-
 
 public class Warning : MonoBehaviour
 {
     [SerializeField] private GameObject uiPanel;
+    [SerializeField] private TextMeshProUGUI myText;
 
     void Start()
     {
         if (uiPanel != null)
         {
             uiPanel.SetActive(false);
+           
+            if (myText != null) myText.gameObject.SetActive(false);
         }
     }
 
@@ -18,6 +21,7 @@ public class Warning : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             uiPanel.SetActive(true);
+            if (myText != null) myText.gameObject.SetActive(true);
         }
     }
 
@@ -26,6 +30,7 @@ public class Warning : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             uiPanel.SetActive(false);
+            if (myText != null) myText.gameObject.SetActive(false);
         }
     }
 }
