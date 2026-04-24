@@ -13,7 +13,7 @@ public class LightToggle : MonoBehaviour
     void Update()
     {
         
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
            
             myLight.enabled = !myLight.enabled;
