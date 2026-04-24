@@ -26,7 +26,7 @@ public class DoorBehaviour : MonoBehaviour, IInteractable
 
     public string GetDescription()
     {
-        return _isOpen ? "Нажмите E, чтобы закрыть" : "Нажмите E, чтобы открыть";
+        return _isOpen ? "Press E to open" : "Press E to close";
        
     }
 }
