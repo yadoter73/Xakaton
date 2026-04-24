@@ -4840,7 +4840,7 @@ Transform:
   m_GameObject: {fileID: 1190024458}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 11.56, y: 2.29, z: 52.45}
+  m_LocalPosition: {x: 11.56, y: 1.29, z: 52.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6053,7 +6053,7 @@ Transform:
   m_GameObject: {fileID: 1618763529}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.56, y: 2.29, z: 52.45}
+  m_LocalPosition: {x: 11.56, y: 1.29, z: 52.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8312,6 +8312,30 @@ PrefabInstance:
       propertyPath: _interactionText
       value: 
       objectReference: {fileID: 1863213207}
+    - target: {fileID: 7098291044569143917, guid: 3c3fecd1209ff71489e41843ea83ccb6, type: 3}
+      propertyPath: StandingHeight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7098291044569143917, guid: 3c3fecd1209ff71489e41843ea83ccb6, type: 3}
+      propertyPath: CrouchingHeight
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7101408592255346669, guid: 3c3fecd1209ff71489e41843ea83ccb6, type: 3}
+      propertyPath: CapsuleHeight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7101408592255346669, guid: 3c3fecd1209ff71489e41843ea83ccb6, type: 3}
+      propertyPath: CapsuleYOffset
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129757077519964473, guid: 3c3fecd1209ff71489e41843ea83ccb6, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129757077519964473, guid: 3c3fecd1209ff71489e41843ea83ccb6, type: 3}
+      propertyPath: m_Center.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7134915954575111309, guid: 3c3fecd1209ff71489e41843ea83ccb6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 11.56
@@ -8355,6 +8379,10 @@ PrefabInstance:
     - target: {fileID: 7138714894589687967, guid: 3c3fecd1209ff71489e41843ea83ccb6, type: 3}
       propertyPath: m_Name
       value: ExampleCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7141409363710695909, guid: 3c3fecd1209ff71489e41843ea83ccb6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
