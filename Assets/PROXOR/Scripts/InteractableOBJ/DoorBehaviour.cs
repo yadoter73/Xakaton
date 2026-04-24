@@ -23,7 +23,10 @@ public class DoorBehaviour : MonoBehaviour, IInteractable
         _isOpen = !_isOpen;
         _animator.SetBool("IsOpen", _isOpen);
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
     public string GetDescription()
     {
         return _isOpen ? "Press E to open" : "Press E to close";
