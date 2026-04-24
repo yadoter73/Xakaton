@@ -12,17 +12,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExampleCharacter Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 4036232530805280, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4718917724592500, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4898694727102280, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.2723942
+      value: 11.56
       objectReference: {fileID: 0}
     - target: {fileID: 4898694727102280, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.07
+      value: -0.71
       objectReference: {fileID: 0}
     - target: {fileID: 4898694727102280, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.7745447
+      value: 52.45
       objectReference: {fileID: 0}
     - target: {fileID: 4898694727102280, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -62,7 +70,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114565867274256808, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
       propertyPath: MaxSprintSpeed
-      value: 10
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565867274256808, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
+      propertyPath: StandingHeight
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114565867274256808, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
+      propertyPath: CrouchingHeight
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 114565867274256808, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
       propertyPath: MaxAirMoveSpeed
@@ -70,7 +86,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114565867274256808, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
       propertyPath: MaxStableMoveSpeed
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114565867274256808, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
       propertyPath: AirAccelerationSpeed
@@ -83,6 +99,26 @@ PrefabInstance:
     - target: {fileID: 114565867274256808, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
       propertyPath: JumpScalableForwardSpeed
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114967586934651944, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
+      propertyPath: CapsuleHeight
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114967586934651944, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
+      propertyPath: CapsuleYOffset
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114967586934651944, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
+      propertyPath: StableGroundLayers.m_Bits
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 136457490459165436, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
+      propertyPath: m_Height
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 136457490459165436, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
+      propertyPath: m_Center.y
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -197,7 +233,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 189
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
