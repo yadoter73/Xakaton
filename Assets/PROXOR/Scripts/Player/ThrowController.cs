@@ -24,6 +24,7 @@ public class ThrowController : MonoBehaviour
     private void Throw()
     {
         GameObject obj = Instantiate(_currentPrefab, _throwPoint.position, _throwPoint.rotation);
+        obj.SetActive(true);
         BottleMovement moveScript = obj.GetComponent<BottleMovement>();
 
         moveScript.SetTarget(_guardTarget);
