@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class ClubMusic : MonoBehaviour
 {
     public AudioClip track;      
     public Transform player;     
