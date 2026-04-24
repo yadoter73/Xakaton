@@ -2325,6 +2325,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3929381584092021461, guid: ea932d94a2b71c44fb73d2d7878adc79, type: 3}
   m_PrefabInstance: {fileID: 694378949}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &741707475 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5688048727298101069, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+  m_PrefabInstance: {fileID: 1307440643143004334}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &747530495 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7098291044569143917, guid: 3c3fecd1209ff71489e41843ea83ccb6, type: 3}
@@ -8043,6 +8048,14 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9126892148626327638, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: hand
+      value: 
+      objectReference: {fileID: 741707475}
+    - target: {fileID: 9126892148626327638, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 747530495}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
