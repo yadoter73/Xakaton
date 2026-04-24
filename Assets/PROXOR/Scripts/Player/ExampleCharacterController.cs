@@ -71,8 +71,8 @@ namespace KinematicCharacterController.Examples
         public Vector3 Gravity = new Vector3(0, -30f, 0);
         public Transform MeshRoot;
         public Transform CameraFollowPoint;
-        public float CrouchedCapsuleHeight = 1f;
-
+        public float CrouchingHeight = 1.5f;
+        public float StandingHeight = 3f;
         public CharacterState CurrentCharacterState { get; private set; }
 
         private Collider[] _probedColliders = new Collider[8];
@@ -201,8 +201,8 @@ namespace KinematicCharacterController.Examples
                             if (!_isCrouching)
                             {
                                 _isCrouching = true;
-                                Motor.SetCapsuleDimensions(0.5f, CrouchedCapsuleHeight, CrouchedCapsuleHeight * 0.5f);
-                                MeshRoot.localScale = new Vector3(1f, 0.5f, 1f);
+                                Motor.SetCapsuleDimensions(0.5f,CrouchingHeight, CrouchingHeight);
+                                MeshRoot.localScale = new Vector3(1f, CrouchingHeight, 1f);
                             }
                         }
                         else if (inputs.CrouchUp)
@@ -430,7 +430,8 @@ namespace KinematicCharacterController.Examples
                         if (_isCrouching && !_shouldBeCrouching)
                         {
                             // Do an overlap test with the character's standing height to see if there are any obstructions
-                            Motor.SetCapsuleDimensions(0.5f, 2f, 1f);
+                            Motor.SetCapsuleDimensions(0.5f, StandingHeight,CrouchingHeight);
+
                             if (Motor.CharacterOverlap(
                                 Motor.TransientPosition,
                                 Motor.TransientRotation,
@@ -438,13 +439,13 @@ namespace KinematicCharacterController.Examples
                                 Motor.CollidableLayers,
                                 QueryTriggerInteraction.Ignore) > 0)
                             {
-                                // If obstructions, just stick to crouching dimensions
-                                Motor.SetCapsuleDimensions(0.5f, CrouchedCapsuleHeight, CrouchedCapsuleHeight * 0.5f);
+                                Motor.SetCapsuleDimensions(0.5f, CrouchingHeight, CrouchingHeight);
+                                MeshRoot.localScale = new Vector3(1f, CrouchingHeight, 1f);
                             }
                             else
                             {
                                 // If no obstructions, uncrouch
-                                MeshRoot.localScale = new Vector3(1f, 1f, 1f);
+                                MeshRoot.localScale = new Vector3(1f, StandingHeight, 1f);
                                 _isCrouching = false;
                             }
                         }
