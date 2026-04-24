@@ -20,6 +20,8 @@ public class KickDoor : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit, kickRange))
         {
             Rigidbody rb = hit.rigidbody;
+            rb.constraints = ~RigidbodyConstraints.FreezeAll;
+            
             if (rb != null)
             {
                 
