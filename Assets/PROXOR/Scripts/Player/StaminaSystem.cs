@@ -12,6 +12,8 @@ public class StaminaSystem : MonoBehaviour
 
     [SerializeField] private float _currentStamina;
     public bool isExhausted;
+    public float CurrentStamina => _currentStamina;
+    public float MaxStamina => _maxStamina;
 
     private ExampleCharacterController _controller;
     private CancellationTokenSource _cts;
