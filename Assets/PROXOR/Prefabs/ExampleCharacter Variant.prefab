@@ -85,7 +85,8 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1339159333115884, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1398904762131290, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
@@ -94,7 +95,21 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1398904762131290, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6727204674392239220}
+    - targetCorrespondingSourceObject: {fileID: 1398904762131290, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2216616886506544970}
   m_SourcePrefab: {fileID: 100100000, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
+--- !u!114 &7098291044569143917 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114565867274256808, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
+  m_PrefabInstance: {fileID: 7139673343869131717}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7138714894589687967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76020eee813ed7844bcea94c5d5ce76a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7138714894589687967 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1398904762131290, guid: d295472d4ce25404e9aed2627c34801f, type: 3}
@@ -135,3 +150,21 @@ MonoBehaviour:
   _regenDelay: 4
   _currentStamina: 100
   isExhausted: 0
+--- !u!114 &2216616886506544970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7138714894589687967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 365d29b5c00dbaa46a86a49943781df8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Controller: {fileID: 7098291044569143917}
+  WalkStepInterval: 0.5
+  SprintStepInterval: 0.3
+  VelocityThreshold: 0.1
+  FootstepSounds: []
+  SprintSounds: []
