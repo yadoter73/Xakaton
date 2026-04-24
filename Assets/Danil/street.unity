@@ -2532,6 +2532,7 @@ GameObject:
   - component: {fileID: 157340802}
   - component: {fileID: 157340801}
   - component: {fileID: 157340803}
+  - component: {fileID: 157340804}
   m_Layer: 0
   m_Name: GameObject (1)
   m_TagString: Untagged
@@ -2589,6 +2590,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiPanel: {fileID: 93710957}
   myText: {fileID: 278211926}
+--- !u!114 &157340804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157340800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42fd560c745aa274fa8281309698b95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushSpeed: 3
+  pushDuration: 0.5
+  playerTag: Player
+  disablePlayerMovement: 1
+  movementScriptName: ExampleCharacterController
 --- !u!1 &158066371
 GameObject:
   m_ObjectHideFlags: 0
