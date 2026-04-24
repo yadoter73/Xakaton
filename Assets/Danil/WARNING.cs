@@ -1,4 +1,4 @@
-using TMPro; 
+using TMPro;
 using UnityEngine;
 
 public class Warning : MonoBehaviour
@@ -6,31 +6,21 @@ public class Warning : MonoBehaviour
     [SerializeField] private GameObject uiPanel;
     [SerializeField] private TextMeshProUGUI myText;
 
-    void Start()
-    {
-        if (uiPanel != null)
-        {
-            uiPanel.SetActive(false);
-           
-            if (myText != null) myText.gameObject.SetActive(false);
-        }
-    }
+    private void Start() => Toggle(false);
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            uiPanel.SetActive(true);
-            if (myText != null) myText.gameObject.SetActive(true);
-        }
+        if (other.CompareTag("Player")) Toggle(true);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            uiPanel.SetActive(false);
-            if (myText != null) myText.gameObject.SetActive(false);
-        }
+        if (other.CompareTag("Player")) Toggle(false);
+    }
+
+    private void Toggle(bool state)
+    {
+        if (uiPanel) uiPanel.SetActive(state);
+        if (myText) myText.gameObject.SetActive(state);
     }
 }
