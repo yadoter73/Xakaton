@@ -5,12 +5,15 @@ public class EnemyFollowing : MonoBehaviour
 {
     [SerializeField] GameObject _target;
     private NavMeshAgent _agent;
+    private Animator _anim;
 
     [SerializeField] private string obstacleTag = "Obstacle"; 
     [SerializeField] private float pushForce = 5f;
     private void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
+        _anim = GetComponentInChildren<Animator>();
+        _anim.SetBool("isRunning", true);
     }
     private void Update()
     {
