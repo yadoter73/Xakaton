@@ -17,7 +17,7 @@ public class KickDoor : MonoBehaviour
     private Camera cam;
     private Collider playerCol;
     private float startY;
-
+    [SerializeField]private LayerMask interact;
     void Awake()
     {
         cam = Camera.main;
@@ -29,7 +29,7 @@ public class KickDoor : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && !isKicking)
         {
-            if (Physics.Raycast(cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)), out RaycastHit hit, kickRange))
+            if (Physics.Raycast(cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)), out RaycastHit hit, kickRange,interact))
             {
                 if (hit.rigidbody != null)
                 {
