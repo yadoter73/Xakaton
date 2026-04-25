@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.AI;
 using PrimeTween;
+using UnityEngine.SceneManagement;
+
 public class EnemyFollowing : MonoBehaviour
 {
     [SerializeField] GameObject _target;
@@ -37,6 +39,10 @@ public class EnemyFollowing : MonoBehaviour
 
             rb.AddForce(pushDirection * pushForce, ForceMode.Impulse);
         }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        SceneManager.LoadScene("GAMEOVER");
     }
 }
 

@@ -11,6 +11,7 @@ public class DoorKicking : MonoBehaviour, IInteractable
 
 	private Animator _anim;
 	private float startY;
+	private bool _interactable = true;
 
 	private void Start()
 	{
@@ -20,20 +21,24 @@ public class DoorKicking : MonoBehaviour, IInteractable
 	}
 	public string GetDescription()
 	{
-		return "E, ÷òîáû ÂÛÁÈÒÜ ÄÂÅĞÜ";
-	}
+		if (_interactable) return "E, ÷òîáû ÂÛÁÈÒÜ ÄÂÅĞÜ";
+		return "";	}
 
 	public void Interact(int id)
 	{
-		Kick();
+		if (_interactable) Kick();
 	}
 
 	void Kick()
 	{
 		PlayLegAnimation();
 		_kickSound.Play();
-		_anim.Play("DoorKick");
-		_sceneTransition.StartTransition();
+		_anim.SetBool("Kick", true);
+		if (_sceneTransition != null)
+		{
+			_sceneTransition.StartTransition();
+		}
+		_interactable = false;
 	}
 
 	void PlayLegAnimation()
