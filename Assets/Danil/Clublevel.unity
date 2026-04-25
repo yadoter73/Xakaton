@@ -14,11 +14,11 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 3
+  m_Fog: 1
+  m_FogColor: {r: 0.27692774, g: 0.18431373, b: 0.32941177, a: 1}
+  m_FogMode: 1
   m_FogDensity: 0.01
-  m_LinearFogStart: 0
+  m_LinearFogStart: -50
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
@@ -3769,7 +3769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7101408592255346669, guid: 3c3fecd1209ff71489e41843ea83ccb6, type: 3}
       propertyPath: StableGroundLayers.m_Bits
-      value: 0
+      value: 72
       objectReference: {fileID: 0}
     - target: {fileID: 7101408592255346669, guid: 3c3fecd1209ff71489e41843ea83ccb6, type: 3}
       propertyPath: MaxStableDistanceFromLedge
@@ -6539,6 +6539,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 266999843805342426, guid: 50f0fcb48dba9e4409c28275f71d4178, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 4274933648426385461, guid: 50f0fcb48dba9e4409c28275f71d4178, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.09
+      objectReference: {fileID: 0}
     - target: {fileID: 5207526777460061132, guid: 50f0fcb48dba9e4409c28275f71d4178, type: 3}
       propertyPath: _player
       value: 
@@ -6549,7 +6557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7208939435685066769, guid: 50f0fcb48dba9e4409c28275f71d4178, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2072833
+      value: 1.0249479
       objectReference: {fileID: 0}
     - target: {fileID: 7208939435685066769, guid: 50f0fcb48dba9e4409c28275f71d4178, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12204,6 +12212,7 @@ GameObject:
   - component: {fileID: 1333647829}
   - component: {fileID: 1333647831}
   - component: {fileID: 1333647830}
+  - component: {fileID: 1333647832}
   m_Layer: 6
   m_Name: Spot Light
   m_TagString: Untagged
@@ -12314,6 +12323,22 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!114 &1333647832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1333647828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d07f6a66e434a4a995894b628844ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minIntensity: 80
+  maxIntensity: 150
+  minSpeed: 0.05
+  maxSpeed: 0.15
 --- !u!43 &1351564450
 Mesh:
   m_ObjectHideFlags: 0
