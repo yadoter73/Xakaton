@@ -24,7 +24,7 @@ public class RollerTable : MonoBehaviour , IInteractable
     public void Interact(int id)
     {
         _motor.enabled = false;
-        Tween.Position(_player, _startPos.position, _endPos.position, 1f, _curve)
+        Tween.Position(_player, _startPos.position, _endPos.position, 0.6f, _curve)
             .OnComplete(() =>
         {
             _motor.enabled = true;
