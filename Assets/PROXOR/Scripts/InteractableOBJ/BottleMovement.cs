@@ -6,7 +6,7 @@ public class BottleMovement : MonoBehaviour
     public void SetTarget(Transform target)
     {
         if (target == null) return;
-        Tween.Position(transform, target.position, _duration, Ease.InQuad)
+        Tween.Position(transform,target.position, _duration, Ease.InQuad)
             .OnComplete(() =>
             {
                 Destroy(gameObject);
