@@ -42,7 +42,7 @@ public class EnemyFollowing : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("GAMEOVER");
     }
 }
 
