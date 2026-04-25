@@ -6,7 +6,7 @@ public class BottleFly : MonoBehaviour, IInteractable
     [SerializeField] private GameObject _bottlePrefab;
     [SerializeField] Image _hand;
     [SerializeField] Sprite _bottle;
-    public string GetDescription() => "Pick Up!!!";
+    public string GetDescription() => "Бери!!!";
 
     public void Interact(int interactionType)
     {

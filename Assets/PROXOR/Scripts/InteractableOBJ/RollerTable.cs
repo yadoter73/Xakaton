@@ -19,7 +19,7 @@ public class RollerTable : MonoBehaviour , IInteractable
     }
     public string GetDescription()
     {
-        return "Press E to roll";
+        return "E, чтобы перекатиться";
     }
     public void Interact(int id)
     {
