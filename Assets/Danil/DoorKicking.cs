@@ -22,8 +22,7 @@ public class DoorKicking : MonoBehaviour, IInteractable
 	public string GetDescription()
 	{
 		if (_interactable) return "E, ÷òîáû ÂÛÁÈÒÜ ÄÂÅĞÜ";
-		return "";
-	}
+		return "";	}
 
 	public void Interact(int id)
 	{
