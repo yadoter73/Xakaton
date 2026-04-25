@@ -1,16 +1,21 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using PrimeTween;
 
-public class SceneToo : MonoBehaviour
+public class scenetoo : MonoBehaviour
 {
-    [SerializeField] CanvasGroup fade;
-    [SerializeField] string scena;
-    [SerializeField] float duration = 0.5f;
+	[SerializeField] Image fadeImage;
+	[SerializeField] string sceneToLoad;
+	[SerializeField] float fadeDuration = 0.5f;
 
-    public void Transition()
-    {
-        Tween.Alpha(fade, 1f, duration)
-            .OnComplete(() => SceneManager.LoadScene(scena));
-    }
+	public void StartTransition()
+	{
+		fadeImage.gameObject.SetActive(true);
+		Sequence.Create()
+			.ChainDelay(1f)
+			.Chain(Tween.Alpha(fadeImage, 1f, fadeDuration))
+			.OnComplete(() => SceneManager.LoadScene(sceneToLoad));
+	}
 }
+

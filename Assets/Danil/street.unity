@@ -6437,7 +6437,7 @@ Transform:
   m_GameObject: {fileID: 291262918}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 311.32, y: 2.282, z: 437.07}
+  m_LocalPosition: {x: 311.32, y: 1.2820001, z: 437.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17902,17 +17902,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 411b9848691c62a4caee57a138ceaa30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kickForce: 5
-  upwardForce: 2
-  kickRange: 2
-  collisionIgnoreTime: 0.2
-  kickSound: {fileID: 8300000, guid: eec97a5511a256842869e3beab4d1fe7, type: 3}
-  legUI: {fileID: 0}
-  legMoveY: -300
-  animationDuration: 0.15
-  interact:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &1064342112
 GameObject:
   m_ObjectHideFlags: 0
@@ -22112,7 +22101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -22164,7 +22153,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1326163890}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -27533,7 +27522,7 @@ Transform:
   m_GameObject: {fileID: 1617192673}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 311.32, y: 2.282, z: 437.07}
+  m_LocalPosition: {x: 311.32, y: 1.2820001, z: 437.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28863,6 +28852,14 @@ PrefabInstance:
       propertyPath: _interactionText
       value: 
       objectReference: {fileID: 2000117726}
+    - target: {fileID: 7101408592255346669, guid: 3c3fecd1209ff71489e41843ea83ccb6, type: 3}
+      propertyPath: CapsuleHeight
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7129757077519964473, guid: 3c3fecd1209ff71489e41843ea83ccb6, type: 3}
+      propertyPath: m_Height
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7134915954575111309, guid: 3c3fecd1209ff71489e41843ea83ccb6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 311.32
@@ -38879,7 +38876,7 @@ MonoBehaviour:
   legMoveY: -300
   _animationDuration: 0.15
   _kickSound: {fileID: 6006604294840844142}
-  sceneTransition: {fileID: 6006604294840844143}
+  _sceneTransition: {fileID: 6006604294840844143}
 --- !u!65 &6006604294840844141
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39010,9 +39007,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 057daf08f4309844fb4a131bde62cf1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fade: {fileID: 0}
-  scena: 
-  duration: 0.5
+  fadeImage: {fileID: 1326163891}
+  sceneToLoad: MainMenu
+  fadeDuration: 0.5
 --- !u!4 &6557927192491905613
 Transform:
   m_ObjectHideFlags: 0
