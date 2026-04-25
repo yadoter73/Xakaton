@@ -2116,7 +2116,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5719dcd8192782047a1e23a78daf1bc4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 98.8
+      value: 100.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5719dcd8192782047a1e23a78daf1bc4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6259,6 +6259,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a42ad6a4668ecfb44a1f036838e43f67, type: 3}
+--- !u!114 &1683665556 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8357125647168085354, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+  m_PrefabInstance: {fileID: 1307440643143004334}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1693478890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7091,6 +7102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _throwPoint: {fileID: 1362622652}
   _guardTarget: {fileID: 682467797}
+  _hand: {fileID: 1683665556}
+  _handSprite: {fileID: -1674297249, guid: ff83e70d60e046543b6537143408a13a, type: 3}
 --- !u!43 &1967576726
 Mesh:
   m_ObjectHideFlags: 0
@@ -8033,9 +8046,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8357125647168085354, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1674297249, guid: ff83e70d60e046543b6537143408a13a, type: 3}
     - target: {fileID: 8360130923833394691, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068525008274156512, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_Name
+      value: Hand
       objectReference: {fileID: 0}
     - target: {fileID: 9126892148626327638, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
       propertyPath: hand
@@ -8375,6 +8396,18 @@ PrefabInstance:
       propertyPath: _duration
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6492301349610225926, guid: c36482db93db672429372d0d35e06751, type: 3}
+      propertyPath: _hand
+      value: 
+      objectReference: {fileID: 1683665556}
+    - target: {fileID: 6492301349610225926, guid: c36482db93db672429372d0d35e06751, type: 3}
+      propertyPath: _bottle
+      value: 
+      objectReference: {fileID: 899717490, guid: df91f32c2dd13c1459bc1dee2381aae5, type: 3}
+    - target: {fileID: 6492301349610225926, guid: c36482db93db672429372d0d35e06751, type: 3}
+      propertyPath: _handWithBottle
+      value: 
+      objectReference: {fileID: 1683665556}
     - target: {fileID: 7653897754607796403, guid: c36482db93db672429372d0d35e06751, type: 3}
       propertyPath: m_Name
       value: PosionToThrow
@@ -8408,5 +8441,5 @@ SceneRoots:
   - {fileID: 374358427}
   - {fileID: 1680545035}
   - {fileID: 35590197}
-  - {fileID: 6975978748815247115}
   - {fileID: 533661536}
+  - {fileID: 6975978748815247115}
