@@ -181,7 +181,7 @@ namespace KinematicCharacterController
         /// </summary>
         [SerializeField]
         [Tooltip("Height of the Character Capsule")]
-        private float CapsuleYOffset = 1f;
+        private float CapsuleYOffset = 1.5f;
         /// <summary>
         /// Physics material of the character's capsule
         /// </summary>
@@ -335,6 +335,7 @@ namespace KinematicCharacterController
         /// <summary>
         /// Specifies the LayerMask that the character's movement algorithm can detect collisions with. By default, this uses the rigidbody's layer's collision matrix
         /// </summary>
+
         [System.NonSerialized]
         public LayerMask CollidableLayers = -1;
 
@@ -2428,6 +2429,7 @@ namespace KinematicCharacterController
         /// <returns> Returns number of overlaps </returns>
         public int CharacterOverlap(Vector3 position, Quaternion rotation, Collider[] overlappedColliders, LayerMask layers, QueryTriggerInteraction triggerInteraction, float inflate = 0f)
         {
+            layers = CollidableLayers & ~StableGroundLayers;
             Vector3 bottom = position + (rotation * _characterTransformToCapsuleBottomHemi);
             Vector3 top = position + (rotation * _characterTransformToCapsuleTopHemi);
             if (inflate != 0f)

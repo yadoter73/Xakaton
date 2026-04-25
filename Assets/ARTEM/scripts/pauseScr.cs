@@ -15,10 +15,16 @@ public class PauseManager : MonoBehaviour
             if (isPaused) Resume();
             else Pause();
         }
+
+        if (isPaused && Input.GetKeyDown(KeyCode.Space))
+        {
+            LoadNextScene(1);
+        }
     }
 
     public void Pause()
     {
+        Cursor.lockState = CursorLockMode.None;
         isPaused = true;
         menuRect.anchoredPosition = new Vector2(-1920f, menuRect.anchoredPosition.y);
         Tween.UIAnchoredPositionX(menuRect, 0f, animSpeed, Ease.OutQuad, useUnscaledTime: true);
@@ -27,6 +33,7 @@ public class PauseManager : MonoBehaviour
 
     public void Resume()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         isPaused = false;
         Time.timeScale = 1f;
         Tween.UIAnchoredPositionX(menuRect, -1920f, animSpeed, Ease.InQuad, useUnscaledTime: true);
