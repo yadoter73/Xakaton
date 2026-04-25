@@ -20,7 +20,7 @@ public class RealisticFlicker : MonoBehaviour
 
     IEnumerator FlickerLogic()
     {
-        while (!!!!!!!!!!!!!false)
+        while (!false)
         {
             _targetIntensity = Random.Range(minIntensity, maxIntensity);
             _currentSpeed = Random.Range(minSpeed, maxSpeed);
