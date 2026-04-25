@@ -4367,25 +4367,61 @@ PrefabInstance:
       propertyPath: m_Name
       value: InteractionCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1213386925523674621, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_text
+      value: "\u0426\u0435\u043B\u044C:"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213386925523674621, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1349229817626133267, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
       propertyPath: staminaSystem
       value: 
       objectReference: {fileID: 1702636137}
     - target: {fileID: 2668077608284835840, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
       propertyPath: m_text
-      value: '- go to the party'
+      value: "- \u041F\u043E\u0439\u0442\u0438 \u043D\u0430 \u0432\u0435\u0447\u0435\u0440\u0438\u043D\u043A\u0443"
       objectReference: {fileID: 0}
     - target: {fileID: 2668077608284835840, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
       propertyPath: m_margin.z
-      value: -283.70374
+      value: -472.1316
       objectReference: {fileID: 0}
+    - target: {fileID: 2668077608284835840, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: c20c75092ff6485488adfe2d8d8eab23, type: 2}
+    - target: {fileID: 2668077608284835840, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_fontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2668077608284835840, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3876431485405189331, guid: c20c75092ff6485488adfe2d8d8eab23, type: 2}
     - target: {fileID: 2668077608284835840, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2668077608284835840, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692839071493179483, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_text
+      value: "\u0432\u044B\u0431\u0438\u0442\u044C"
+      objectReference: {fileID: 0}
     - target: {fileID: 4692839071493179483, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
       propertyPath: m_fontSize
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692839071493179483, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: c20c75092ff6485488adfe2d8d8eab23, type: 2}
+    - target: {fileID: 4692839071493179483, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4692839071493179483, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
       propertyPath: m_fontColor.b
@@ -4403,9 +4439,37 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 4692839071493179483, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 3876431485405189331, guid: c20c75092ff6485488adfe2d8d8eab23, type: 2}
+    - target: {fileID: 4692839071493179483, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294950144
+      objectReference: {fileID: 0}
+    - target: {fileID: 4692839071493179483, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116055329491758798, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 56.1526
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116055329491758798, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -28.076294
+      objectReference: {fileID: 0}
+    - target: {fileID: 5222767877722207625, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 56.1526
+      objectReference: {fileID: 0}
+    - target: {fileID: 5222767877722207625, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -28.07629
+      objectReference: {fileID: 0}
     - target: {fileID: 6268362684402373027, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7302921357913788723, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
       propertyPath: m_Pivot.y
@@ -6353,7 +6417,7 @@ MonoBehaviour:
   ReferenceFrame: 0
   RecenterTarget: 0
   PanAxis:
-    Value: 0
+    Value: -180
     Center: 0
     Range: {x: -180, y: 180}
     Wrap: 1
@@ -6436,8 +6500,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291262918}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 311.32, y: 3.19, z: 437.07}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: -0.00000004371139}
+  m_LocalPosition: {x: 311.32, y: 3.19, z: 422.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10773,7 +10837,7 @@ PlayableDirector:
   m_Enabled: 1
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 90b6db76d050e6a429e2f22194c1a44e, type: 2}
-  m_InitialState: 1
+  m_InitialState: 0
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
@@ -28157,8 +28221,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1617192673}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 311.32, y: 3.19, z: 437.07}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: -0.00000004371139}
+  m_LocalPosition: {x: 311.32, y: 3.19, z: 422.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29519,7 +29583,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7134915954575111309, guid: 3c3fecd1209ff71489e41843ea83ccb6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 437.07
+      value: 422.33
       objectReference: {fileID: 0}
     - target: {fileID: 7134915954575111309, guid: 3c3fecd1209ff71489e41843ea83ccb6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -40006,7 +40070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   legUI: {fileID: 338286362103229097}
   legMoveY: -300
-  _animationDuration: 0.15
+  _animationDuration: 0.5
   _kickSound: {fileID: 6006604294840844142}
   _sceneTransition: {fileID: 6006604294840844143}
 --- !u!65 &6006604294840844141
