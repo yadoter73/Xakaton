@@ -7634,7 +7634,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GAMENAME
+  m_text: CLUB CRASHERS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d5ea91dfec492f7409b13fe091e60e61, type: 2}
   m_sharedMaterial: {fileID: -5518724780814594393, guid: d5ea91dfec492f7409b13fe091e60e61, type: 2}
