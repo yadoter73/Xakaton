@@ -29598,6 +29598,11 @@ PrefabInstance:
       value: 376.9
       objectReference: {fileID: 0}
     - target: {fileID: 5701181658796141794, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_text
+      value: "\u041E\u0441\u0442\u043E\u0440\u043E\u0436\u043D\u043E: \u0417\u0430
+        \u0432\u0430\u043C\u0438 \u043F\u043E\u0433\u043E\u043D\u044F!!!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5701181658796141794, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: c20c75092ff6485488adfe2d8d8eab23, type: 2}
