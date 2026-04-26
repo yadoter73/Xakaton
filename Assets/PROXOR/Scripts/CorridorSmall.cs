@@ -4,6 +4,7 @@ public class CorridorSmall : MonoBehaviour
 {
     [SerializeField] GameObject[] _walls;
     [SerializeField] GameObject _text;
+    [SerializeField] AudioSource _clip; 
 
     [SerializeField] private float _moveDuration = 10f;
     [SerializeField] private float _moveStrength = 1f;
@@ -22,13 +23,15 @@ public class CorridorSmall : MonoBehaviour
     }
     void Walls()
     {
+        _clip.Play();
+
         Tween.Delay(1.5f).OnComplete(() => _text.SetActive(false));
         Vector3 centerPosition = transform.position;
 
         foreach (GameObject wall in _walls)
         {
             Vector3 targetPosition = Vector3.Lerp(wall.transform.position, centerPosition, _moveStrength);
-            Tween.Position(wall.transform, targetPosition, _moveDuration, Ease.InOutSine);
+            Tween.Position(wall.transform, targetPosition, _moveDuration, Ease.InOutSine).OnComplete(() => _clip.Stop());
         }
     }
 }

@@ -1276,7 +1276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 1651875048}
-  sceneName: street
+  sceneName: ClubLevel
 --- !u!114 &2098811621
 MonoBehaviour:
   m_ObjectHideFlags: 0
