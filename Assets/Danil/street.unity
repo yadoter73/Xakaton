@@ -40159,7 +40159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 1326163891}
-  sceneToLoad: MainMenu
+  sceneToLoad: ClubLevel
   fadeDuration: 0.5
 --- !u!4 &6557927192491905613
 Transform:

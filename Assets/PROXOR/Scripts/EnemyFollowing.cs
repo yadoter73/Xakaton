@@ -2,14 +2,14 @@ using UnityEngine;
 using UnityEngine.AI;
 using PrimeTween;
 using UnityEngine.SceneManagement;
-
+using System.Collections;
 public class EnemyFollowing : MonoBehaviour
 {
-    [SerializeField] GameObject _target;
+    public GameObject _target;
     private NavMeshAgent _agent;
     private Animator _anim;
 
-    [SerializeField] private string obstacleTag = "Obstacle"; 
+    [SerializeField] private string obstacleTag = "Obstacle";
     [SerializeField] private float pushForce = 5f;
     private void Start()
     {
@@ -38,11 +38,20 @@ public class EnemyFollowing : MonoBehaviour
             pushDirection = pushDirection.normalized;
 
             rb.AddForce(pushDirection * pushForce, ForceMode.Impulse);
+            StartCoroutine(Deleting(collision.gameObject));
         }
+    }
+    private IEnumerator Deleting(GameObject gameObject)
+    {
+        yield return new WaitForSeconds(1);
+        gameObject.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("GAMEOVER");
+        if (other.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("GAMEOVER");
+        }
     }
 }
 

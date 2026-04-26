@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Danil/street.unity
     guid: f96fd9eda9e5c734b87a5288752f8b1b
+  - enabled: 1
+    path: Assets/ARTEM/scenes/GameOver.unity
+    guid: 5c64d7df26493924bbe7080640fe3b6e
+  - enabled: 1
+    path: Assets/Danil/Clublevel.unity
+    guid: 931339e0af5a25641bf695eb21faafea
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

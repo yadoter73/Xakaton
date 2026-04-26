@@ -1,22 +1,21 @@
 using TMPro;
 using UnityEngine;
+using PrimeTween;
 
 public class SpawnEnemy : MonoBehaviour
 {
     [SerializeField] private GameObject _enemyPrefab;
-    [SerializeField] private Transform _spawnPoint;
     [SerializeField] private GameObject _textObject;
     [SerializeField] private TextMeshProUGUI _uiText;
 
     public void ActivateEnemySequence()
     {
-        Instantiate(_enemyPrefab, _spawnPoint.position, _spawnPoint.rotation);
-
-        _textObject.SetActive(true);
-        _uiText.text = "Охранник нашел вас!";
+        _enemyPrefab.SetActive(true);
     }
     private void OnTriggerEnter(Collider other)
     {
-        ActivateEnemySequence();
+        _textObject.SetActive(true);
+        _uiText.text = "Охранник нашел вас!";
+        Tween.Delay(3f).OnComplete(() => ActivateEnemySequence());
     }
 }

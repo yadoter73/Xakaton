@@ -22,6 +22,7 @@ public class CorridorSmall : MonoBehaviour
     }
     void Walls()
     {
+        Tween.Delay(1.5f).OnComplete(() => _text.SetActive(false));
         Vector3 centerPosition = transform.position;
 
         foreach (GameObject wall in _walls)
