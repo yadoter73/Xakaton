@@ -32,8 +32,8 @@ public class DoorKicking : MonoBehaviour, IInteractable
 	void Kick()
 	{
 		PlayLegAnimation();
-		_kickSound.Play();
 		_anim.SetBool("Kick", true);
+		_kickSound.Play();
 		if (_sceneTransition != null)
 		{
 			_sceneTransition.StartTransition();

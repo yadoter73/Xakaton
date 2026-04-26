@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Danil/Clublevel.unity
     guid: 931339e0af5a25641bf695eb21faafea
+  - enabled: 1
+    path: Assets/Danil/DanceFloor.unity
+    guid: b87af0127dea30341b1631c757f0ae86
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
