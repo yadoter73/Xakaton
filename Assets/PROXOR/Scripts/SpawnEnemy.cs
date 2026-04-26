@@ -15,6 +15,7 @@ public class SpawnEnemy : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         _textObject.SetActive(true);
+        _uiText.color = Color.yellow;
         _uiText.text = "Охранник нашел вас!";
         Tween.Delay(3f).OnComplete(() => ActivateEnemySequence());
     }

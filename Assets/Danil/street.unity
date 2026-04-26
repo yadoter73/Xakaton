@@ -4361,6 +4361,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 73250392926446136, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 83872144336770522, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
       propertyPath: m_Name
       value: InteractionCanvas
@@ -4369,6 +4373,22 @@ PrefabInstance:
       propertyPath: staminaSystem
       value: 
       objectReference: {fileID: 1702636137}
+    - target: {fileID: 7302921357913788723, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302921357913788723, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302921357913788723, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7302921357913788723, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 74
+      objectReference: {fileID: 0}
     - target: {fileID: 7826568944793314496, guid: 3370d1006c97e4047be4f36b0100ec69, type: 3}
       propertyPath: m_Pivot.x
       value: 0
