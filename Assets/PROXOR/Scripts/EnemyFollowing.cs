@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.AI;
 using PrimeTween;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
 public class EnemyFollowing : MonoBehaviour
 {
@@ -16,6 +15,7 @@ public class EnemyFollowing : MonoBehaviour
     {
         _agent = GetComponent<NavMeshAgent>();
         _anim = GetComponentInChildren<Animator>();
+        _anim.SetBool("isRunning", true);
     }
     private void Update()
     {
@@ -38,17 +38,10 @@ public class EnemyFollowing : MonoBehaviour
             pushDirection = pushDirection.normalized;
 
             rb.AddForce(pushDirection * pushForce, ForceMode.Impulse);
-            StartCoroutine(deleting(collision.gameObject));
         }
-    }
-    private IEnumerator deleting(GameObject gameObject)
-    {
-        yield return new WaitForSeconds(1);
-        gameObject.SetActive(false);
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
         SceneManager.LoadScene("GAMEOVER");
     }
 }
