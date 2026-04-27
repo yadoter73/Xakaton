@@ -9,6 +9,8 @@ public class MenuScreen : MonoBehaviour
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
     }
 
     public void MoveToY(float targetY, float duration)

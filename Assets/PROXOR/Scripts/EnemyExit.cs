@@ -20,8 +20,8 @@ public class EnemyExit : MonoBehaviour
                     _text.color = Color.green;
                     _text.gameObject.SetActive(true);
                     _text.text = "Фух, кажется он уходит. Мне срочно надо в клуб к джессике";
-                    _textOxrannik.gameObject.SetActive(false);
-                    Tween.Delay(4).OnComplete(() => { _text.gameObject.SetActive(false); _textOxrannik.gameObject.SetActive(false); });
+                    Destroy(_textOxrannik.gameObject);
+                    Tween.Delay(6).OnComplete(() => { _text.gameObject.SetActive(false);});
                 });
             Tween.Delay(5).OnComplete(() => _enemy.gameObject.SetActive(false));
         }
